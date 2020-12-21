@@ -1,0 +1,11 @@
+setup.py
+inf_eng.egg-info/PKG-INFO
+inf_eng.egg-info/SOURCES.txt
+inf_eng.egg-info/dependency_links.txt
+inf_eng.egg-info/top_level.txt
+parser/Parser.py
+parser/ValueTable.py
+parser/__init__.py
+scanner/Scanner.py
+scanner/__init__.py
+scanner/tokens.py

@@ -1,0 +1,17 @@
+{
+	"description": {
+
+		"A": true,
+		"B": false,
+		"C": true,
+		"D": 0,
+    "E": 0
+
+
+	},
+	"rules": [
+		["A and B", "C"],
+		["C and B", "E"]
+	]
+
+}
