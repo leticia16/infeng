@@ -1,17 +1,24 @@
 {
 	"description": {
 
-		"A": true,
-		"B": false,
+		"A": false,
+		"B": [true, "something"],
 		"C": true,
-		"D": 0,
-    "E": 0
-
-
+		"D": [false, "other"],
+    "E": "",
+    "F": "",
+    "G": "",
+    "H": "",
+    "I": "",
+    "J": ""
 	},
+
 	"rules": [
-		["A and B", "C"],
-		["C and B", "E"]
+    ["A and B and C", "H"],
+    ["C or B or G", "I"],
+		["A and B", "E"],
+		["E or B", "F"],
+		["E or !B", "G"]
 	]
 
 }

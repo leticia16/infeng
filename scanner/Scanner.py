@@ -52,6 +52,7 @@ class Scanner(object):
                 self.buffer += i
             else:
                 self.__handle_buffer()
+        self.__handle_buffer()
         tokens_list =  self.tokens
         self.clean()
         return tokens_list

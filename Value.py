@@ -3,9 +3,10 @@
 class Value(object):
     """This class keeps the values and the associated rules of a variable
     """
-    NULL = 0
+    NULL = ''
 
-    def __init__(self, name, description='None', value=0):
+    def __init__(self, name, description='None', value=''):
+        self.name = name
         self.value = value
         self.is_right_side_in_rules = []
         self.description = description
@@ -16,3 +17,5 @@ class Value(object):
     def add_rule(self, rule):
         self.is_right_side_in_rules.append(rule)
 
+    def __str__(self):
+        return f'{self.name}: {self.value} - {self.description}'

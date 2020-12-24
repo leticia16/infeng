@@ -1,21 +1,37 @@
 import pytest, json
+from contextlib import contextmanager
 from Engine import Engine
+from Value import Value
 
-def test_load_knowledge():
-    with open('__test__/knowledge.json', 'r') as file:
-        e = Engine(file)
-    with open('__test__/knowledge.json', 'r') as file:
-        jfile = json.load(file)
+@contextmanager
+def engine_context():
+    e = Engine('__test__/knowledge.json')
+    file = open('__test__/knowledge.json', 'r')
+    try:
+        yield e, json.load(file)
+    finally:
+        file.close()
+
+
+def test_load_descriptions():
+    with engine_context() as (e, jfile):
+        desc = jfile['description']
+
+    for key in desc.keys():
+        value = e.values_table[key]
+        if type(desc[key]) == list:
+            assert value.value == desc[key][0]
+            assert value.description == desc[key][1]
+        else:
+            assert value.value == desc[key]
+
+def test_load_rules():
+    with engine_context() as (e, jfile):
         rules = jfile['rules']
 
-    value_C_rules = e.values_table['C'].is_right_side_in_rules
-    value_E_rules = e.values_table['E'].is_right_side_in_rules
+        for i in range(len(e.knowledge_base)):
+            assert e.knowledge_base[i].left == rules[i][0]
+            assert e.knowledge_base[i].right == rules[i][1]
 
-    for i in range(len(e.knowledge_base)):
-        assert e.knowledge_base[i].left == rules[i][0]
-        assert e.knowledge_base[i].right == rules[i][1]
-
-    assert e.knowledge_base[0] == value_C_rules[0]
-    assert e.knowledge_base[1] == value_E_rules[0]
 
 

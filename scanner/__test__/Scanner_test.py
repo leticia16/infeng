@@ -55,8 +55,9 @@ def test_handle_buffer():
 def test_scan():
     s.clean()
     sentence = 'A and (B and (C or B and !D))'
-    sentence2 = 'A and (B and !(C or B and D))'
-    sentence3 = '1A and C'
+    sentence2 = '!A'
+    sentence3 = 'A and (B and !(C or B and D))'
+    sentence4 = '1A and C'
     out = [['A', tokens.ID], ['and', tokens.OPERATOR],
            ['(', tokens.DELIMITER],
            ['B', tokens.ID], ['and', tokens.OPERATOR],
@@ -66,12 +67,16 @@ def test_scan():
            ['D', tokens.ID],
            [')', tokens.DELIMITER], [')', tokens.DELIMITER]]
 
+    out2 = [['!', tokens.NOT], ['A', tokens.ID]]
+
     result = s.scan(sentence)
+    result2 = s.scan(sentence2)
 
     assert out == result
+    assert out2 == result2
     with pytest.raises(Exception):
-        s.scan(sentence2)
         s.scan(sentence3)
+        s.scan(sentence4)
 
 
 
