@@ -56,4 +56,4 @@ Acepted formats: bool, str, [bool, str].')
             self.load_rules(rules)
 
     def evaluate(self, expression):
-        return self.evalator.evaluate(expression)
+        return self.evaluator.evaluate(expression)

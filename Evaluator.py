@@ -2,8 +2,12 @@ from infeng.scanner import tokens, Scanner
 from infeng.parser import Parser
 from .Value import Value
 
+def asking(value):
+    i = input(f'What is the value of {value.name}? ')
+    value.value = bool(i.strip())
+
 class Evaluator(object):
-    def __init__(self, values_table, asking_function=None):
+    def __init__(self, values_table, asking_function=asking):
         self.var_stack = []
         self.op_stack = []
         self.scanner = Scanner()
