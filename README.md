@@ -11,7 +11,7 @@ Create a knowledge base json file formated like:
 		"A": "", // just declares the variable
 		"B": "It's raining", // declares and adds a description
 		"C": false, // adds a value
-		"D": [true, "I have a car" // value and description
+		"D": [true, "I have a car"], // value and description
 		"E": "",
 		"F": ""
 	},
