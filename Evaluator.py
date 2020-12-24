@@ -1,6 +1,6 @@
-from scanner import tokens, Scanner
-from parser import Parser
-from Value import Value
+from infeng.scanner import tokens, Scanner
+from infeng.parser import Parser
+from .Value import Value
 
 class Evaluator(object):
     def __init__(self, values_table, asking_function=None):

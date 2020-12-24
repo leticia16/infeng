@@ -15,7 +15,7 @@
 
 	"rules": [
     ["A and B and C", "H"],
-    ["C or B or G", "I"],
+    ["(C and B) or G", "I"],
 		["A and B", "E"],
 		["E or B", "F"],
 		["E or !B", "G"]

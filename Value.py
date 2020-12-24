@@ -1,5 +1,4 @@
 
-
 class Value(object):
     """This class keeps the values and the associated rules of a variable
     """

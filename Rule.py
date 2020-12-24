@@ -1,5 +1,4 @@
 
-
 class Rule(object):
     def __init__(self, content):
         self.left = ''

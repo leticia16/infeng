@@ -1,9 +1,9 @@
 import json
-from Rule import Rule
-from Value import Value
-from scanner import Scanner
-from parser import Parser
-from Evaluator import Evaluator
+from .Rule import Rule
+from .Value import Value
+from infeng.scanner import Scanner
+from infeng.parser import Parser
+from .Evaluator import Evaluator
 
 
 class Engine(object):
@@ -55,3 +55,5 @@ Acepted formats: bool, str, [bool, str].')
             self.load_descriptions(desc)
             self.load_rules(rules)
 
+    def evaluate(self, expression):
+        return self.evalator.evaluate(expression)
