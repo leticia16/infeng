@@ -1,6 +1,6 @@
-from infeng.scanner import tokens, Scanner
-from infeng.parser import Parser
-from .Value import Value
+from scanner import tokens, Scanner
+from parser import Parser
+from Value import Value
 
 def asking(value):
     i = input(f'What is the value of {value.name}? ')
