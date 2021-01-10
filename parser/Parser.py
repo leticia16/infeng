@@ -1,4 +1,4 @@
-from scanner import tokens
+from infeng.scanner import tokens
 
 class Parser(object):
     pritority = {
