@@ -3,8 +3,16 @@ from parser import Parser
 from Value import Value
 
 def asking(value):
-    i = input(f'What is the value of {value.name}? ')
-    value.value = bool(i.strip())
+    while True:
+        i = input(f'What is the value of {value.name}? ').lower()
+        if i[0] == 't':
+            value.value = True
+            return
+        elif i[0] == 'f':
+            value.value = False
+            return
+        else:
+            print('Invalid entry. Try again.')
 
 class Evaluator(object):
     def __init__(self, values_table, asking_function=asking):
