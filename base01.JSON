@@ -1,0 +1,95 @@
+{
+	"description": {
+
+      "Drama": ["", "pergunta"],
+      "Comedia": ["", "pergunta"],
+      "FilmeComFamilia": ["", "pergunta"],
+      "ClassificacaoLivre": ["", "pergunta"],
+      "FilmeLeve": "",
+      "Fatansia": ["", "pergunta"],
+      "FilmeDramatico": "",
+      "FilmeFamiliar": "",
+      "HistoriaVeridica": ["", "pergunta"],
+      "FilmeEmocionante": "",
+      "Lista1": "",
+        
+      "Romance": ["", "pergunta"], 
+      "Emocao": "",
+      "ComediaEmocionante": "",
+      "ComAmigos": ["","Pergunta"],
+      "ClassificacaoModerada": ["","Pergunta"],
+      "Adultos": "",
+      "ComediaComAmigos": "",
+      "Lista2": "",
+      
+      "Acao": ["","pergunta"],
+      "FiccaoCientifica": ["","Pergunta"],
+      "Marvel": ["","Pergunta"],
+      "Dc": ["","Pergunta"],
+      "Hq": "",
+      "SuperHeroi": ["","Pergunta"],
+      "Geek": "",
+      "Aventura": ["","Pergunta"],
+      "Empolgante": "",
+      "FilmesDeHerois": "",
+      "FilmesDeAcaoEAventura": "",
+      "Lista3": "",
+      
+      "DesastresNaturais": ["","Pergunta"],
+      "FilmeDeSobrevivencia": "",
+      "AcaoEmocionante": "",
+      "AcaoComRomance": "",
+      "Guerra": ["","Pergunta"],
+      "AcaoDramatica": "",
+      "AcaoEGuerra": "",
+      "Lista4": "",
+      
+      "Terror": ["","Pergunta"],
+      "FilmeSozinho": ["","Pergunta"],
+      "FilmesDeTerror": "",
+      "Suspense": ["","Pergunta"],
+      "FilmesDeSuspense": "",
+      "FilmePesado": ["","Pergunta"],
+      "FilmeDeTerrorPesado": "",
+      "FilmeDeSuspensePesado": "",
+      "Lista5": "",
+      
+      "Espaco": ["","Pergunta"],
+      "ViagensEspaciais": "",
+      "VidaExtraterrestre": ["","Pergunta"],
+      "DramasNoEspaco": "",
+      "Alienigena": "",
+      "Lista6": ""
+      
+      
+      
+      
+
+	},
+
+	"rules": [
+      ["FilmecomFamilia and ClassificacaoLivre", "FilmeLeve"],
+      ["Drama or Fatansia", "FilmeDramatico"],
+      ["FilmeLeve and Comedia", "FilmeFamiliar"],
+      ["FilmeDramatico and HistoriaVeridica", "FilmeEmocionante"],
+      ["FilmeFamiliar or FilmeEmocionante", "Lista1"]
+      
+      ["Romance or Drama", "Emocao"],
+      ["ComAmigos and ClassificacaoModerada", "Adultos"],
+      ["Comedia and Emocao", "ComediaEmocionante"],
+      ["Comedia and Adultos", "ComediaComAmigos"],
+      ["ComediaEmocionante or ComediaComAmigos", "Lista2"],
+      
+      ["Marvel or Dc", "Hq"],
+      ["SuperHeroi or Hq", "Geek"],
+      ["Aventura and FiccaoCientifica", "Empolgante"],
+      ["Geek and Comedia", "FilmesDeHerois"],
+      ["Acao and Empolgante", "FilmesDeAcaoEAventura"],
+      ["FilmesDeHerois or FilmesDeAcaoEAventura", "Lista3"],
+      
+ 
+      
+      
+	]
+
+}
